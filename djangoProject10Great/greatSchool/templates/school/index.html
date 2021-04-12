@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form method="POST">
+ <div>
+     {% csrf_token %}
+        <input type="text" name="zipCode">
+      </div>
+      <p>
+        <button type="submit" > enter your zip code</button>
+      </p>
+    </div>
+    </form>
+
+
+
+{% for name,school_summary,type,level,street,city,state,state,zipcode,phone,county,overview_url,rating in schoolInfo %}
+
+    <p>Name:{{ name}}<br>
+    description: {{ school_summary}}<br>
+    type of School: {{ type}}<br>
+    Grades tought: {{ level}}<br>
+    Address: {{ street}}<br>
+    City: {{ city}}<br>
+    State: {{ state}}<br>
+    Area code: {{ zipcode}}<br>
+    Phone number: {{ phone}}<br>
+    County: {{ county}}<br>
+    Link to see more details: {{ overview_url}}<br>
+    Rating for the school: {{ rating}}</p>
+
+
+{% endfor %}
+
+
+
+
+
+
+
+</body>
+</html>
